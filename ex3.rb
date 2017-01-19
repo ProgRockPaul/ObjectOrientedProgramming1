@@ -16,6 +16,19 @@ class Player
       end
       return self
   end
+  def level_up
+    @lives += 1
+  end
+  def collect_treasure(n)
+    @gold_coins += (n)
+    if @gold_coins >= 10
+      @score += 1
+    end
+    if @score >= 10
+      level_up
+    end
+    return self
+  end
   def restart
         @gold_coins = 0
         @health_points = 10
